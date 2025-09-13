@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+}
+
+#gameContainer {
+    background: rgba(28, 28, 28, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 14px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    transition: background 0.3s ease;
+}
+
+#title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #eee;
+    text-shadow: 0 0 6px #000;
+}
+
+#instruction {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.wordBox {
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffd633;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #ffda52;
+    animation: fadeIn 0.5s ease;
+}
+
+#input {
+    width: 85%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #555;
+    outline: none;
+    text-align: center;
+    margin-top: 10px;
+    background: #1e1e1e;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#input:focus {
+    border-color: #ffd633;
+    box-shadow: 0 0 10px #ffd633;
+}
+
+#status {
+    font-size: 18px;
+    margin-top: 15px;
+    min-height: 26px;
+    transition: 0.3s;
+}
+
+.success {
+    color: #33cc66;
+    animation: glowGreen 0.6s ease;
+}
+
+.fail {
+    color: #ff3b3b;
+    animation: glowRed 0.6s ease, shake 0.4s;
+}
+
+#timerBar {
+    width: 100%;
+    height: 12px;
+    background: #333;
+    margin-top: 25px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+}
+
+#timeLeft {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #33cc66, #ffd633, #ff3b3b);
+    transition: width 0.1s linear;
+}
+
+#countdown {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+/* Animacje */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+@keyframes glowGreen {
+    from { text-shadow: 0 0 5px #33cc66; }
+    to { text-shadow: 0 0 20px #33cc66; }
+}
+
+@keyframes glowRed {
+    from { text-shadow: 0 0 5px #ff3b3b; }
+    to { text-shadow: 0 0 20px #ff3b3b; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+}
+
+#gameContainer {
+    background: rgba(28, 28, 28, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+#title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+#gameArea {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: #111;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #444;
+}
+
+#player {
+    position: absolute;
+    bottom: 10px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+    background: #33cc66;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #33cc66aa;
+    transition: left 0.05s linear; /* płynniejsze przesuwanie */
+}
+
+
+.obstacle {
+    position: absolute;
+    top: -40px;
+    width: 40px;
+    height: 40px;
+    background: #ff3b3b;
+    border-radius: 6px;
+    box-shadow: 0 0 12px #ff3b3baa;
+    filter: brightness(1.2);
+}
+
+#status {
+    font-size: 18px;
+    margin-top: 15px;
+    min-height: 24px;
+    transition: 0.2s;
+}
+
+.success {
+    color: #33cc66;
+    animation: fadeIn 0.4s ease;
+}
+
+.fail {
+    color: #ff3b3b;
+    animation: fadeIn 0.4s ease, shake 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}

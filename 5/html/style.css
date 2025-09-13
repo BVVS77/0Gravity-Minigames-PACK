@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+}
+
+#gameContainer {
+    background: rgba(28, 28, 28, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 14px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+#title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #eee;
+    text-shadow: 0 0 6px #000;
+}
+
+#simonBoard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px auto;
+    width: 220px;
+}
+
+.simonBtn {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    opacity: 0.6;
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+#red { background: #ff3b3b; }
+#yellow { background: #ffd633; }
+#green { background: #33cc66; }
+#blue { background: #3399ff; }
+
+.simonBtn.active {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #fff;
+}
+
+#status {
+    font-size: 18px;
+    margin-top: 10px;
+    min-height: 24px;
+    transition: 0.2s;
+}
+
+.success {
+    color: #33cc66;
+    animation: fadeIn 0.4s ease;
+}
+
+.fail {
+    color: #ff3b3b;
+    animation: fadeIn 0.4s ease, shake 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}

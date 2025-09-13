@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+}
+
+#gameContainer {
+    background: rgba(28, 28, 28, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+#title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.trafficLight {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #333;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.light.active {
+    opacity: 1;
+}
+
+#red.active { background: #ff3b3b; box-shadow: 0 0 15px #ff3b3b; }
+#yellow.active { background: #ffd633; box-shadow: 0 0 15px #ffd633; }
+#green.active { background: #33cc66; box-shadow: 0 0 15px #33cc66; }
+
+#status {
+    font-size: 18px;
+    margin-top: 10px;
+    min-height: 24px;
+    transition: 0.2s;
+}
+
+.success {
+    color: #33cc66;
+    animation: fadeIn 0.4s ease;
+}
+
+.fail {
+    color: #ff3b3b;
+    animation: fadeIn 0.4s ease, shake 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}

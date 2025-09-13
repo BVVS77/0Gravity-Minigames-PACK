@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stop The Bar PRO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameRoot">
+    <div id="panel">
+      <div id="header">
+        <h2>Stop The Bar</h2>
+        <div id="roundInfo">Runda <span id="round">1</span>/<span id="rounds">3</span></div>
+      </div>
+
+      <!-- pasek czasu -->
+      <div id="timer"><div id="timeBar"></div></div>
+
+      <div id="barWrap">
+        <div id="bar">
+          <div id="successZone"></div>
+          <div id="indicator"></div>
+        </div>
+      </div>
+
+      <div id="hud">
+        <div class="hudItem">⏱ <span id="time">–</span></div>
+        <div class="hudItem">💥 Próby: <span id="tries">–</span></div>
+        <div class="hudItem">🔥 Combo: <span id="combo">0</span></div>
+        <div class="hudItem">⭐ Wynik: <span id="score">0</span></div>
+      </div>
+
+      <div id="hint">Wciśnij <b>Spacja</b> lub <b>E</b>, aby zatrzymać wskaźnik.</div>
+      <div id="status"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
